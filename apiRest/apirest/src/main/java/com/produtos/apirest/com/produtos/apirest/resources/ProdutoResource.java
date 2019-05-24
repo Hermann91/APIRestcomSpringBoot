@@ -28,6 +28,10 @@ public class ProdutoResource {
     public Produtos listaProdutosunico(@PathVariable(value = "id") long id) {
         return produtoRepository.findById(id);
     }
+    @PostMapping("/produto")
+    public Produtos salvaProduto(@RequestBody Produtos produto) {
+      return produtoRepository.save(produto);
+    }
 
     @DeleteMapping("/produto")
     public void deletaProduto(@RequestBody Produtos produto){
